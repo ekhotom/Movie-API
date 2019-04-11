@@ -2,4 +2,4 @@
 
 node index.js to start
 
-movie API w/ GET, POST, PATCH, DELETE. Mongoose etc.
+movie RESTful API w/ GET, POST, PATCH, DELETE. Mongoose etc.
