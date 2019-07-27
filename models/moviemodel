@@ -1,0 +1,20 @@
+const mongoose = require("mongoose");
+
+// connection to db
+const server = process.env.MONGO_HOST;
+const database = process.env.MONGO_DB;
+const user = process.env.MONGO_USER;
+const password = process.env.MONGO_PW;
+
+mongoose.connect(`mongodb://${user}:${password}@${server}/${database}`, { useNewUrlParser: true } );
+
+// ### movie schema
+const MovieSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  year: { type: Number, required: true },
+  cast: { type: Array, "default": [] },
+  genres: { type: Array, "default": [] }
+});
+
+// "Movie" is the name of the model, MovieSchema is reference to the schema
+module.exports = mongoose.model("Movie", MovieSchema);
